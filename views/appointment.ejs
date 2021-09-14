@@ -1,0 +1,50 @@
+<%- include("partials/header"); -%>
+<div class="page-head">
+  <h1>APPOINTMENT</h1>
+</div>
+<section id="consultation">
+  <h2 class="head-color">CONTACT US FOR CONSULTATION</h2>
+  <form action="/appointment" method="post">
+    <div class="row">
+      <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <input type="text" class="form-control" placeholder="First Name" name="f_name">
+      </div>
+      <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <input type="text" class="form-control" placeholder="Last Name" name="l_name">
+      </div>
+      <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <input type="email" class="form-control" placeholder="Email" name="email">
+      </div>
+      <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <input type="number" class="form-control" placeholder="Phone No." name="phn_no">
+      </div>
+    </div>
+    <textarea class="col-lg-6 col-md-6 col-sm-12 col-xs-12 message" name="message" rows="8" cols="80" placeholder="Enter your message"></textarea><br>
+    <button type="submit" name="button" class="btn btn-primary btn-lg sub-btn" id="liveToastBtn">SUBMIT</button>
+  </form>
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Message</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Request submitted successfully.
+    </div>
+  </div>
+</div>
+
+</section>
+
+<script type="text/javascript">
+  var toastTrigger = document.getElementById('liveToastBtn')
+  var toastLiveExample = document.getElementById('liveToast')
+  if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+      var toast = new bootstrap.Toast(toastLiveExample)
+      toast.show()
+    });
+  }
+</script>
+<%- include("partials/footer"); -%>

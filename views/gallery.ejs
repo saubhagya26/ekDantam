@@ -1,0 +1,90 @@
+<%- include("partials/header"); -%>
+<div class="page-head">
+  <h1>GALLERY</h1>
+</div>
+<div class="container-fluid gallery-cont">
+
+  <div class="row text-center text-lg-left">
+
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img1.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img2.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img5.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img6.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img6.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img5.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img2.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img1.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img2.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img1.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img6.jpg" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="images/img5.jpg" alt="">
+          </a>
+    </div>
+  </div>
+
+  <div class="modal">
+    <span class="close">×</span>
+    <img class="modalImage" id="img01" />
+  </div>
+
+</div>
+<script>
+    var modalEle = document.querySelector(".modal");
+    var modalImage = document.querySelector(".modalImage");
+    Array.from(document.querySelectorAll(".img-thumbnail")).forEach(item => {
+       item.addEventListener("click", event => {
+          modalEle.style.display = "block";
+          modalImage.src = event.target.src;
+       });
+    });
+    document.querySelector(".close").addEventListener("click", () => {
+       modalEle.style.display = "none";
+    });
+</script>
+<%- include("partials/footer"); -%>

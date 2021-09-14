@@ -1,0 +1,69 @@
+<%- include("partials/header"); -%>
+<div class="page-head">
+  <h1>SERVICES</h1>
+</div>
+<div class="container-fluid ser-container">
+  <h2 class="service-head">WHAT WE DO</h2>
+  <div class="service-det">
+    <div class="tab-head">
+      <button class="ser-tabs" onclick="openTab(event, 'rct')" id="defaultOpen">Root Canal Treatment</button><hr>
+      <button class="ser-tabs" onclick="openTab(event, 'den-imp')">Dental Implant</button><hr>
+      <button class="ser-tabs" onclick="openTab(event, 'braces')">Braces</button><hr>
+      <button class="ser-tabs" onclick="openTab(event, 'whitening')">Teeth Whitening</button><hr>
+      <button class="ser-tabs" onclick="openTab(event, 'crown-bridge')">Crowns and Bridges</button><hr>
+      <button class="ser-tabs" onclick="openTab(event, 'cos-den')">Cosmetic Dentistry</button><hr>
+    </div>
+
+    <div id="rct" class="tab-content active">
+      <h3>Root Canal Treatment</h3>
+      <p> <%= serviceContent %> </p>
+    </div>
+
+    <div id="den-imp" class="tab-content">
+      <h3>Dental Implants</h3>
+      <p><%= serviceContent %></p>
+    </div>
+
+    <div id="braces" class="tab-content">
+      <h3>Braces</h3>
+      <p><%= serviceContent %></p>
+    </div>
+
+    <div id="whitening" class="tab-content">
+      <h3>Whitening</h3>
+      <p><%= serviceContent %></p>
+    </div>
+
+    <div id="crown-bridge" class="tab-content">
+      <h3>Crown and Bridges</h3>
+      <p><%= serviceContent %></p>
+    </div>
+
+    <div id="cos-den" class="tab-content">
+      <h3>Cosmetic Dentistry</h3>
+      <p><%= serviceContent %></p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("ser-tabs");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById("defaultOpen").click();
+</script>
+<%- include("partials/footer"); -%>
